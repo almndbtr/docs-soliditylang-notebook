@@ -1,5 +1,6 @@
 # Notes
 
+- [Good to know](./good-to-know.md)
 - [Storage, Memory, and the Stack](./storage-memory-stack.md)
 - ...
 - ...

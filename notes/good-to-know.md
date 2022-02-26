@@ -1,0 +1,5 @@
+# Good to know
+
+## Types
+
+- ...
