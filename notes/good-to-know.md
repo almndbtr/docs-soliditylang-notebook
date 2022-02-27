@@ -2,13 +2,13 @@
 
 ## Types
 
+## Value Types
+
 - Concept of `undefined` or `null` doesn't exist
 - Newly declared variables always have a default value dependent on its type -- think of this as the "zero-value" or "zero-state" allocated for said variable, like in Go
   - https://docs.soliditylang.org/en/v0.8.12/control-structures.html#default-value
 - To handle any unexpected values, use the [revert function](https://docs.soliditylang.org/en/v0.8.12/control-structures.html#assert-and-require) to revert the whole transaction, or return a tuple with a second `bool` value denoting success (like Go, where you call a function and assign the respective return values to variables, reserving the first for error checking)
   - `require`, `revert`, and `exceptions` each have their own semantics. Come back to this and their differences later
-
-### Laundry List
 - Booleans
   - The operations `||` and `&&` apply the common short-circuiting rules
     - However, if you run something like say `f(x) || g(y)`, if `f(x)` ervaluates to `true`, `g(y)` will not be evaluated even if it may have side effects. The implication is this: if you want to ensure that _both_ are run, then rewrite it so that's explicit before running the short-circuiting check. For example, you can create a variable to store whatever the `f(x)` expression returns, and another for `g(y)`, and then run the check so you're looking strictly at boolean values rather than the _eventual_ return value that's given.
@@ -43,6 +43,7 @@
     - Warning: always check the return value of `send`, since it can fail if the call stack depth is at 1024 and it also fails if the receipient runs out of gas
     - Use `transfer`
     - Even better: use a pattern where the receipient withdraws the money -- go find Prior Art for this
-- PAUSE: call, delegatecall and staticcall
-  - https://docs.soliditylang.org/en/v0.8.12/types.html#address
 
+### Reference Types
+
+- ...
